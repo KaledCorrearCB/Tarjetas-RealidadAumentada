@@ -43,7 +43,7 @@ async function start() {
     status.textContent = 'Apunta a la tarjeta';
     renderer.setAnimationLoop(() => {
       const t = clock.getElapsedTime();
-      pivot.rotation.z = t * (Math.PI * 2 / 8); // 360 grados cada 8 segundos, eje perpendicular a la tarjeta.
+      pivot.rotation.y = t * (Math.PI * 2 / 8); // 360 grados cada 8 segundos, eje perpendicular a la tarjeta.
       pivot.position.z = 0.22 + Math.sin(t * 1.5) * 0.035;
       renderer.render(scene, camera);
     });
