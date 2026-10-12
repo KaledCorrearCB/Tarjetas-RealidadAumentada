@@ -24,7 +24,11 @@ try {
   model.position.sub(center);
   const scale = 0.65 / Math.max(size.x, size.y, size.z);
   model.scale.setScalar(scale);
-  pivot.add(model);
+  const characterPivot = new THREE.Group();
+  characterPivot.add(model);
+  pivot.add(characterPivot);
+
+
 } catch (error) {
   console.warn('No se pudo cargar modelo.glb; se mostrará un objeto de prueba.', error);
   model = new THREE.Mesh(new THREE.IcosahedronGeometry(0.28, 1), new THREE.MeshStandardMaterial({color:0x55ddff, metalness:0.35, roughness:0.25}));
@@ -41,7 +45,7 @@ async function start() {
     status.textContent = 'Apunta a la tarjeta';
     renderer.setAnimationLoop(() => {
       const t = clock.getElapsedTime();
-      pivot.rotation.z = t * (Math.PI * 2 / 8); // 360 grados cada 8 segundos, eje perpendicular a la tarjeta.
+      characterPivot.rotation.y = t * (Math.PI * 2 / 8); // 360 grados cada 8 segundos, eje perpendicular a la tarjeta.
       pivot.position.z = 0.22 + Math.sin(t * 1.5) * 0.035;
       renderer.render(scene, camera);
     });
