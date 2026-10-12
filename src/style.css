@@ -1,0 +1,1 @@
+*{box-sizing:border-box}html,body,#app{margin:0;width:100%;height:100%;overflow:hidden;background:#111;font-family:system-ui,sans-serif}#status{position:fixed;z-index:10;top:16px;left:50%;transform:translateX(-50%);padding:10px 16px;background:#111c;color:white;border-radius:12px;text-align:center;max-width:90%;pointer-events:none}#app video{object-fit:cover}
