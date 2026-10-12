@@ -4,6 +4,7 @@ import { MindARThree } from 'mind-ar/dist/mindar-image-three.prod.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 const status = document.querySelector('#status');
+console.log('URL del archivo:', new URL('/targets/tarjeta.mind', location.origin).href);
 const mindar = new MindARThree({ container: document.querySelector('#app'), imageTargetSrc: '/targets/tarjeta.mind' });
 const {renderer, scene, camera} = mindar;
 renderer.outputColorSpace = THREE.SRGBColorSpace;

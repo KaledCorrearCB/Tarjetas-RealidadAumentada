@@ -1,1 +1,66 @@
-*{box-sizing:border-box}html,body,#app{margin:0;width:100%;height:100%;overflow:hidden;background:#111;font-family:system-ui,sans-serif}#status{position:fixed;z-index:10;top:16px;left:50%;transform:translateX(-50%);padding:10px 16px;background:#111c;color:white;border-radius:12px;text-align:center;max-width:90%;pointer-events:none}#app video{object-fit:cover}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: system-ui, sans-serif;
+}
+
+#app {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* La cámara debe ocupar toda la pantalla */
+#app video {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* El modelo 3D se dibuja encima del vídeo */
+#app canvas {
+  position: absolute !important;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Mensaje de estado */
+#status {
+  position: fixed;
+  z-index: 10;
+  top: max(16px, env(safe-area-inset-top));
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 10px 16px;
+  max-width: 90%;
+  width: max-content;
+
+  color: white;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+
+  font-size: 14px;
+  text-align: center;
+  pointer-events: none;
+}
+
