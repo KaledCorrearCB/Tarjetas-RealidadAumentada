@@ -68,7 +68,7 @@ pivot.add(characterPivot);
 // Tamaño máximo del personaje.
 // Puedes aumentarlo o reducirlo posteriormente.
 
-const MODEL_SIZE = 0.65;
+const MODEL_SIZE = 1.30;
 
 // Velocidad de rotación en radianes por segundo.
 const ROTATION_SPEED = 0.6;
